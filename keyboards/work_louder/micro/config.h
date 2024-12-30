@@ -11,3 +11,8 @@
 #define WORK_LOUDER_LED_PIN_3 B5
 
 #define RGB_MATRIX_DISABLE_SHARED_KEYCODES
+
+#define RGBLIGHT_DEFAULT_HUE 0        // Red hue
+#define RGBLIGHT_DEFAULT_SAT 255      // Full saturation
+#define RGBLIGHT_DEFAULT_VAL 255      // Moderate brightness (range is 0-255)
+/*#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_LIGHT*/

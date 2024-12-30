@@ -72,13 +72,13 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #endif
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    layer_state_cmp(state, 1) ? work_louder_micro_led_1_on(): work_louder_micro_led_1_off();
-    layer_state_cmp(state, 2) ? work_louder_micro_led_2_on(): work_louder_micro_led_2_off();
-    layer_state_cmp(state, 3) ? work_louder_micro_led_3_on(): work_louder_micro_led_3_off();
-
-    return state;
-}
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     layer_state_cmp(state, 1) ? work_louder_micro_led_1_on(): work_louder_micro_led_1_off();
+//     layer_state_cmp(state, 2) ? work_louder_micro_led_2_on(): work_louder_micro_led_2_off();
+//     layer_state_cmp(state, 3) ? work_louder_micro_led_3_on(): work_louder_micro_led_3_off();
+//
+//     return state;
+// }
 
 void eeconfig_init_user(void) {
     work_louder_config.raw = 0;
@@ -89,4 +89,9 @@ void eeconfig_init_user(void) {
 void matrix_init_user(void) {
     work_louder_config.raw = eeconfig_read_user();
     work_louder_micro_led_all_set((uint8_t)(work_louder_config.led_level * 255 / 4));
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_sethsv_noeeprom(0, 255, 128); // Set to red with full saturation and moderate brightness
+    return state;
 }
