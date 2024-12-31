@@ -5,6 +5,7 @@
 
 #define RGBLIGHT_DI_PIN D2
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_GRADIENT + 9
+#define BACKLIGHT_ON_STATE 0   // Set to 1 if the backlight turns on when the pin is high; otherwise, set to 0
 
 #define WORK_LOUDER_LED_PIN_1 B6
 #define WORK_LOUDER_LED_PIN_2 B7
@@ -15,4 +16,7 @@
 #define RGBLIGHT_DEFAULT_HUE 0        // Red hue
 #define RGBLIGHT_DEFAULT_SAT 255      // Full saturation
 #define RGBLIGHT_DEFAULT_VAL 255      // Moderate brightness (range is 0-255)
-/*#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_LIGHT*/
+
+#define NO_ACTION_ONESHOT
+#define NO_ACTION_TAPPING
+#define NO_MUSIC_MODE
